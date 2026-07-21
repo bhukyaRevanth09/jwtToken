@@ -1,0 +1,40 @@
+
+.mainBox{
+
+height:100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.cardBox{
+    height: 50vh;
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttonBox-1{
+    height: 40px;
+    width:90px;
+    margin: 10px;
+    border-radius: 10px;
+    border-width: 0px;
+    font-family: sans-serif;
+    font-size: medium;
+    font-weight: 600;
+    box-shadow: 1px 1px 5px 1px black;
+    
+}
+
+.buttonBox-2{
+    height:40px;
+    width:90px;
+    margin: 10px;
+    border-radius: 10px;
+    border-width: 0px;
+        font-family: sans-serif;
+    font-size: medium;
+    font-weight: 600;
+    box-shadow: 1px 1px 5px 1px black;
+}
