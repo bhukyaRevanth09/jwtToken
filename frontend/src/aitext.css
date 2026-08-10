@@ -1,0 +1,675 @@
+
+
+.aiMainBox {
+  position: relative;
+
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  background: #f8fafc;
+
+  border-radius: 20px 0 0 20px;
+
+  overflow: hidden;
+
+  box-sizing: border-box;
+}
+
+
+/* ========================================
+   CHAT AREA
+======================================== */
+
+.chatBox {
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+
+  box-sizing: border-box;
+}
+
+
+/* ========================================
+   MESSAGES
+   ONLY THIS AREA SCROLLS
+======================================== */
+
+.chatMessages {
+  width: 100%;
+  height: 100%;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  padding: 30px 6% 130px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 18px;
+
+  box-sizing: border-box;
+
+  scroll-behavior: smooth;
+}
+
+
+/* Scrollbar */
+
+.chatMessages::-webkit-scrollbar {
+  width: 7px;
+}
+
+.chatMessages::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.chatMessages::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+
+.chatMessages::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+
+/* ========================================
+   USER MESSAGE
+======================================== */
+
+.chatBoxUser {
+  align-self: flex-end;
+
+  max-width: min(70%, 750px);
+
+  padding: 12px 17px;
+
+  background: #2563eb;
+
+  color: #ffffff;
+
+  border-radius: 18px 18px 4px 18px;
+
+  font-size: 15px;
+
+  line-height: 1.5;
+
+  word-wrap: break-word;
+  overflow-wrap: anywhere;
+
+  box-shadow: 0 3px 8px rgba(37, 99, 235, 0.18);
+}
+
+
+/* ========================================
+   AI MESSAGE
+======================================== */
+
+.chatBoxAi {
+  align-self: flex-start;
+
+  max-width: min(75%, 800px);
+
+  padding: 13px 18px;
+
+  background: #ffffff;
+
+  color: #0f172a;
+
+  border-radius: 18px 18px 18px 4px;
+
+  border: 1px solid #e5e7eb;
+
+  font-size: 15px;
+
+  line-height: 1.5;
+
+  word-wrap: break-word;
+  overflow-wrap: anywhere;
+
+  box-shadow: 0 3px 12px rgba(15, 23, 42, 0.06);
+}
+
+
+/* ========================================
+   MARKDOWN
+======================================== */
+
+.chatBoxAi p {
+  margin: 0 0 9px;
+
+  line-height: 1.6;
+}
+
+.chatBoxAi p:last-child {
+  margin-bottom: 0;
+}
+
+
+.chatBoxAi strong {
+  font-weight: 700;
+  color: #0f172a;
+}
+
+
+/* Lists */
+
+.chatBoxAi ul,
+.chatBoxAi ol {
+  padding-left: 22px;
+
+  margin: 8px 0 12px;
+}
+
+.chatBoxAi li {
+  margin-bottom: 5px;
+
+  line-height: 1.55;
+}
+
+
+/* Headings */
+
+.chatBoxAi h1,
+.chatBoxAi h2,
+.chatBoxAi h3 {
+  color: #0f172a;
+
+  margin: 12px 0 7px;
+
+  line-height: 1.3;
+}
+
+.chatBoxAi h1 {
+  font-size: 20px;
+}
+
+.chatBoxAi h2 {
+  font-size: 18px;
+}
+
+.chatBoxAi h3 {
+  font-size: 16px;
+}
+
+
+/* ========================================
+   INLINE CODE
+======================================== */
+
+.chatBoxAi code {
+  background: #eef2f7;
+
+  color: #2563eb;
+
+  padding: 2px 6px;
+
+  border-radius: 5px;
+
+  font-size: 13px;
+
+  font-family: Consolas, Monaco, monospace;
+}
+
+
+/* ========================================
+   CODE BLOCK
+======================================== */
+
+.chatBoxAi pre {
+  background: #0f172a;
+
+  color: #f8fafc;
+
+  padding: 14px;
+
+  border-radius: 10px;
+
+  overflow-x: auto;
+
+  margin: 10px 0;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+}
+
+.chatBoxAi pre code {
+  background: transparent;
+
+  color: inherit;
+
+  padding: 0;
+}
+
+
+/* ========================================
+   TABLE
+======================================== */
+
+.chatBoxAi table {
+  border-collapse: collapse;
+
+  width: 100%;
+
+  margin: 12px 0;
+
+  font-size: 14px;
+
+  display: block;
+
+  overflow-x: auto;
+}
+
+.chatBoxAi th,
+.chatBoxAi td {
+  border: 1px solid #e2e8f0;
+
+  padding: 8px 12px;
+
+  text-align: left;
+
+  white-space: nowrap;
+}
+
+.chatBoxAi th {
+  background: #eff6ff;
+
+  color: #1e3a8a;
+
+  font-weight: 600;
+}
+
+.chatBoxAi tr:nth-child(even) {
+  background: #f8fafc;
+}
+
+
+/* Horizontal line */
+
+.chatBoxAi hr {
+  border: none;
+
+  border-top: 1px solid #e2e8f0;
+
+  margin: 12px 0;
+}
+
+
+/* ========================================
+   WELCOME MESSAGE
+======================================== */
+
+.loadingText {
+  min-height: 220px;
+
+  max-width: 650px;
+
+  margin: auto;
+
+  padding: 25px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+
+  color: #475569;
+
+  font-size: 17px;
+
+  line-height: 1.7;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  box-sizing: border-box;
+}
+
+
+/* ========================================
+   FLOATING INPUT
+======================================== */
+
+.aiCardBox {
+  position: absolute;
+
+  left: 50%;
+
+  bottom: 20px;
+
+  transform: translateX(-50%);
+
+  width: min(850px, 90%);
+
+  padding: 8px;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 16px;
+
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
+
+  box-sizing: border-box;
+
+  z-index: 20;
+}
+
+
+/* Form */
+
+.aiCardBox form {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+}
+
+
+/* ========================================
+   INPUT
+======================================== */
+
+.aiText {
+  flex: 1;
+
+  min-width: 0;
+
+  height: 48px;
+
+  padding: 0 16px;
+
+  border: none;
+
+  border-radius: 11px;
+
+  background: #f8fafc;
+
+  color: #0f172a;
+
+  font-size: 15px;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  outline: none;
+
+  box-sizing: border-box;
+
+  transition: background 0.2s ease;
+}
+
+.aiText:focus {
+  background: #f1f5f9;
+}
+
+.aiText::placeholder {
+  color: #94a3b8;
+}
+
+
+/* ========================================
+   SEND BUTTON
+======================================== */
+
+.askButton {
+  width: 48px;
+
+  height: 48px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 0;
+
+  border: none;
+
+  border-radius: 12px;
+
+  background: #2563eb;
+
+  color: #ffffff;
+
+  font-size: 18px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.15s ease,
+    box-shadow 0.2s ease;
+}
+
+.askButton:hover {
+  background: #1d4ed8;
+
+  transform: translateY(-1px);
+
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.25);
+}
+
+.askButton:active {
+  transform: scale(0.95);
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 1000px) {
+
+  .chatMessages {
+    padding: 25px 4% 125px;
+  }
+
+  .chatBoxUser {
+    max-width: 75%;
+  }
+
+  .chatBoxAi {
+    max-width: 80%;
+  }
+
+  .aiCardBox {
+    width: 90%;
+
+    bottom: 18px;
+  }
+}
+
+
+/* ========================================
+   SMALL TABLET
+======================================== */
+
+@media (max-width: 768px) {
+
+  .aiMainBox {
+    border-radius: 15px 0 0 15px;
+  }
+
+  .chatMessages {
+    padding: 20px 3% 115px;
+
+    gap: 14px;
+  }
+
+  .chatBoxUser,
+  .chatBoxAi {
+    max-width: 85%;
+
+    font-size: 14px;
+  }
+
+  .loadingText {
+    max-width: 90%;
+
+    font-size: 15px;
+  }
+
+  .aiCardBox {
+    width: 92%;
+
+    bottom: 15px;
+
+    padding: 7px;
+
+    border-radius: 14px;
+  }
+
+  .aiText {
+    height: 46px;
+
+    font-size: 14px;
+  }
+
+  .askButton {
+    width: 46px;
+
+    height: 46px;
+  }
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+
+  .aiMainBox {
+    width: 100%;
+
+    height: calc(100vh - 65px);
+
+    border-radius: 0;
+  }
+
+  .chatBox {
+    width: 100%;
+  }
+
+  .chatMessages {
+    padding: 18px 12px 100px;
+
+    gap: 12px;
+  }
+
+  .chatBoxUser,
+  .chatBoxAi {
+    max-width: 88%;
+
+    padding: 10px 14px;
+
+    font-size: 14px;
+
+    border-radius: 15px;
+  }
+
+  .chatBoxUser {
+    border-radius: 15px 15px 4px 15px;
+  }
+
+  .chatBoxAi {
+    border-radius: 15px 15px 15px 4px;
+  }
+
+  .loadingText {
+    min-height: 180px;
+
+    max-width: 95%;
+
+    padding: 20px 10px;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+  }
+
+  .aiCardBox {
+    bottom: 10px;
+
+    width: calc(100% - 20px);
+
+    padding: 6px;
+
+    border-radius: 14px;
+  }
+
+  .aiText {
+    height: 44px;
+
+    padding: 0 13px;
+
+    font-size: 14px;
+  }
+
+  .askButton {
+    width: 44px;
+
+    height: 44px;
+
+    border-radius: 10px;
+
+    font-size: 16px;
+  }
+}
+
+
+/* ========================================
+   VERY SMALL PHONES
+======================================== */
+
+@media (max-width: 380px) {
+
+  .chatMessages {
+    padding: 15px 8px 95px;
+  }
+
+  .chatBoxUser,
+  .chatBoxAi {
+    max-width: 92%;
+
+    padding: 9px 12px;
+
+    font-size: 13px;
+  }
+
+  .aiCardBox {
+    width: calc(100% - 14px);
+
+    bottom: 7px;
+  }
+
+  .aiText {
+    height: 42px;
+
+    font-size: 13px;
+
+    padding: 0 11px;
+  }
+
+  .askButton {
+    width: 42px;
+
+    height: 42px;
+  }
+}
+

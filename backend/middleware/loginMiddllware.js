@@ -2,7 +2,7 @@ import jwt from 'jsonwebtoken'
 import dotenv from 'dotenv'
 
 
-dotenv.config({quiet:false})
+dotenv.config({quiet:true})
 
 export const authLoginMiddlware = async (req,res,next) => {
  try {
@@ -50,7 +50,6 @@ let decoded;
 
 
     req.userName = decoded
-    console.log('decoded::',req?.userName)
     return next()
    
  } catch (error) {

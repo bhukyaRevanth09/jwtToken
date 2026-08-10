@@ -1,22 +1,36 @@
 
 import connect from "./config/database.js"
-import userRouter from "./routes/userRouter.js"
+import socketHandle from "./utils/socketbackend.js"
+import app from "./config/expressConfig.js"
+import http from 'http'
 
+import { askGroq } from "./aiGrok.js"
+
+import { Server } from "socket.io"
 import dotenv from 'dotenv'
-import express from 'express'
-import cors from 'cors'
+
+
+
 
 dotenv.config({quiet:true})
-connect()
-const app = express()
-app.use(express.json())
-app.use(cors())
 
-app.use('/api',userRouter)
+
+
+const server = http.createServer(app)
+
+ const io = new Server(server,{
+    cors:{
+        origin:'http://localhost:5173',
+        credentials: true,
+       
+    }
+ })
+
+connect()
 
 
 
 const port = process.env.PORTED_CODE
-app.listen(port,()=>{
+server.listen(port,()=>{
     console.log("server running on port : ", port)
 })

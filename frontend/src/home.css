@@ -1,0 +1,315 @@
+
+
+.homeMainBox {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  background: #f8fafc;
+  box-sizing: border-box;
+}
+
+
+
+.navigationBox {
+  width: 230px;
+  min-width: 230px;
+  height: 100vh;
+
+  background: #ffffff;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  gap: 16px;
+
+  border-radius: 0 20px 20px 0;
+
+  box-shadow: 1px 0 8px rgba(0, 0, 0, 0.08);
+
+  padding: 20px 15px;
+
+  box-sizing: border-box;
+
+  position: sticky;
+  top: 0;
+}
+
+
+
+
+.nav-button {
+  width: 180px;
+  height: 52px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: #f1f3f5;
+  color: #374151;
+
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.nav-button:hover {
+  background: #e8f5eb;
+
+  color: #166534;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.nav-button:active {
+  background: #111827;
+  color: #ffffff;
+
+  transform: scale(0.97);
+}
+
+
+
+
+.icon {
+  width: 20px;
+  height: 20px;
+
+  margin-right: 8px;
+
+  flex-shrink: 0;
+}
+
+
+
+.componentBox {
+  flex: 1;
+
+  min-width: 0;
+  min-height: 100vh;
+
+  margin-left: 10px;
+
+  background: #ffffff;
+
+  border-radius: 20px 0 0 20px;
+
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.05);
+
+  overflow-x: hidden;
+}
+
+
+
+@media (max-width: 1000px) {
+
+  .navigationBox {
+    width: 190px;
+    min-width: 190px;
+
+    padding: 15px 10px;
+  }
+
+  .nav-button {
+    width: 150px;
+    height: 50px;
+
+    font-size: 14px;
+  }
+
+  .nav-button:hover {
+    width: 155px;
+    font-size: 14px;
+  }
+
+  .componentBox {
+    margin-left: 8px;
+  }
+}
+
+
+
+
+@media (max-width: 768px) {
+
+  .navigationBox {
+    width: 75px;
+    min-width: 75px;
+
+    padding: 15px 8px;
+
+    gap: 20px;
+  }
+
+  .nav-button {
+    width: 52px;
+    height: 52px;
+
+    border-radius: 12px;
+
+    padding: 0;
+  }
+
+
+
+  .nav-button {
+    font-size: 0;
+  }
+
+  .nav-button .icon {
+    width: 22px;
+    height: 22px;
+
+    margin: 0;
+  }
+
+  .nav-button:hover {
+    width: 55px;
+    font-size: 0;
+  }
+
+  .componentBox {
+    margin-left: 5px;
+
+    border-radius: 15px 0 0 15px;
+  }
+}
+
+
+
+
+@media (max-width: 600px) {
+
+  .homeMainBox {
+    display: block;
+
+    padding-bottom: 70px;
+  }
+
+
+
+
+  .navigationBox {
+    position: fixed;
+
+    left: 0;
+    bottom: 0;
+
+    top: auto;
+
+    width: 100%;
+    height: 65px;
+
+    min-width: 0;
+
+    padding: 8px 10px;
+
+    flex-direction: row;
+
+    justify-content: space-around;
+
+    align-items: center;
+
+    gap: 5px;
+
+    border-radius: 15px 15px 0 0;
+
+    z-index: 1000;
+
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+
+  .navigationBox > div {
+    flex: 1;
+
+    display: flex;
+
+    justify-content: center;
+  }
+
+
+  .nav-button {
+    width: 50px;
+    height: 48px;
+
+    border-radius: 12px;
+
+    font-size: 0;
+  }
+
+
+  .nav-button:hover {
+    width: 50px;
+
+    transform: none;
+  }
+
+
+  .nav-button .icon {
+    width: 22px;
+    height: 22px;
+
+    margin: 0;
+  }
+
+
+  .componentBox {
+    width: 100%;
+
+    min-height: calc(100vh - 65px);
+
+    margin: 0;
+
+    border-radius: 0;
+
+    box-shadow: none;
+
+    overflow-x: hidden;
+  }
+}
+
+
+
+@media (max-width: 380px) {
+
+  .navigationBox {
+    height: 60px;
+
+    padding: 6px;
+  }
+
+  .nav-button {
+    width: 45px;
+    height: 44px;
+  }
+
+  .nav-button:hover {
+    width: 45px;
+  }
+
+  .nav-button .icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .componentBox {
+    min-height: calc(100vh - 60px);
+  }
+}
+

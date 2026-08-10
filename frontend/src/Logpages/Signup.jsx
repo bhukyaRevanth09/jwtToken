@@ -78,7 +78,7 @@ try {
 
      localStorage.setItem('token',respons.data.token)
      localStorage.setItem('refreshToken',respons.data.refreshToken)
-     navigate('/home')
+     navigate('/home/dashboard')
 
    }else{
     console.log('error')

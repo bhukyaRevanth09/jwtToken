@@ -64,7 +64,7 @@ function Login() {
       console.log(res?.data.refreshToken)
       localStorage.setItem("token",res?.data.message)
       localStorage.setItem('refreshToken',res?.data.refreshToken)
-      navigate('/home')
+      navigate('/home/dashboard')
       
     }
       setForm({
